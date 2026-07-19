@@ -1,20 +1,25 @@
-<html>
-  <head>
-    <link href="/css/base.css" rel="stylesheet" />
-    <link href="/css/csv.css" rel="stylesheet" />
-  </head>
-  <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{template "head.tmpl"}}
+</head>
+<body>
     <div id="fdiv">
-      <div id="gdiv">
-	{{template "admin.tmpl"}}
-	<label>FromDate</label>
-	<input id="fromtime" placeholder="{{ . }}" />
-	<input id="download" type="button" value="Download" />
-      </div>
-      <label id="status"></label>
+        <main id="gdiv">
+            <h2 id="title">CSV Download</h2>
+
+            {{template "admin.tmpl"}}
+            <label for="fromtime">From-Date</label>
+            <input id="fromtime" placeholder="{{ . }}" />
+
+            <input id="download" type="button" value="Download" />
+        </main>
+        <p id="status"></p>
     </div>
+
     <script src="/js/admin.js"></script>
     <script src="/js/csv.js"></script>
+    <script src="/js/pretty.js"></script>
     {{template "sourcecode.tmpl"}}
-  </body>
+</body>
 </html>
